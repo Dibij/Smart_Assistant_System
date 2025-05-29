@@ -6,6 +6,10 @@ import faiss
 from dotenv import load_dotenv
 from sentence_transformers import SentenceTransformer
 from pdfminer.high_level import extract_text  # Lightweight PDF extraction
+import logging
+
+# Suppress PDFMiner warnings
+logging.getLogger('pdfminer').setLevel(logging.ERROR)
 
 # Load environment
 load_dotenv()
